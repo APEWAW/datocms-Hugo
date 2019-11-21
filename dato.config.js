@@ -91,5 +91,24 @@ module.exports = (dato, root, i18n) => {
       });
     });
   });
-};
 
+
+  // Create a `work` directory (or empty it if already exists)...
+  root.directory('content/chapters', dir => {
+    // ...and for each of the works stored online...
+    dato.chapters.forEach((chapter, index) => {
+      // ...create a markdown file with all the metadata in the frontmatter
+      dir.createPost(`${chapter.slug}.md`, 'yaml', {
+        frontmatter: {
+          title: chapter.title
+        },
+        content: chapter.body
+      });
+    });
+  });
+
+
+
+
+
+};
