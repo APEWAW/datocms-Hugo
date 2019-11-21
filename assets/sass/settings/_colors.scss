@@ -1,0 +1,15 @@
+$color-black : #222;
+$color-white : #fff;
+$color-blue : #00a9c4;
+$color-light-blue : #ade9e9;
+$color-purple-blue : rgba(60, 88, 150, 0.8);
+$color-grey : #EFF3F7;
+
+$colors: (
+  'black' : $color-black,
+  'white' : $color-white,
+  'blue' : $color-blue,
+  'purple-blue' : $color-purple-blue,
+  'light-blue' : $color-light-blue,
+  'grey' : $color-grey
+);

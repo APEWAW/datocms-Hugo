@@ -1,0 +1,17 @@
+body {
+  font-family: Open Sans;
+  font-size: $baseline;
+
+  p {
+    padding-bottom: $baseline;
+    line-height: 1.5;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

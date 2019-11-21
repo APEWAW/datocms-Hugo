@@ -102,7 +102,7 @@ module.exports = (dato, root, i18n) => {
         frontmatter: {
           title: chapter.title
         },
-        content: chapter.body
+        content: chapter.content
       });
     });
   });

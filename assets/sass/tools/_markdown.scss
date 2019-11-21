@@ -1,0 +1,45 @@
+
+h2 {
+  @extend .u-pv;
+  @extend .u-pt-x2;
+}
+
+ul {
+  @extend .o-list;
+  @extend .o-list--block;
+  @extend .u-pb;
+
+  li {
+    @extend .o-list__item;
+
+    &:not(:last-child) {
+      margin-bottom: $baseline / 1.45 !important;
+    }
+  }
+}
+
+figure {
+  @extend .u-pv;
+  @extend .u-pt-x2;
+
+  figcaption {
+    @extend .u-pt;
+    font-size: $baseline / 1.2;
+  }
+}
+
+.footnotes {
+  @extend .u-pt-x4;
+
+  hr {
+    width: 30px;
+    @extend .u-mb;
+  }
+
+  ol {
+
+    li {
+      font-size: $baseline / 1.2;
+    }
+  }
+}

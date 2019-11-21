@@ -1,59 +1,41 @@
 <!DOCTYPE html>
+
 <html lang="<%= settings.language %>">
+
   <head>
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {{ if eq .Site.Params.env "production" }}
-      <link rel="stylesheet" href="/assets/all.css">
-    {{ end }}
-    {{ .Site.Data.settings.faviconMetaTags | safeHTML }}
-    {{ if isset .Params "seometatags" }}
-      {{ .Params.seometatags | safeHTML }}
-    {{ else }}
-      {{ .Site.Data.settings.seoMetaTags | safeHTML }}
-    {{ end }}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+      {{ .Title }}
+
+      {{ if not .IsHome }}
+
+      - {{ .Site.Title }}
+
+      {{ end }}
+
+    </title>
+
+    {{ $sass := resources.Get "sass/main.scss" }}
+
+    {{ $style := $sass | resources.ToCSS | resources.Minify }}
+
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
   </head>
+
   <body>
-    <div class="container">
-      <div class="container__sidebar">
-        <div class="sidebar">
-          <h6 class="sidebar__title">
-            <a href="/">{{ .Site.Data.settings.name }}</a>
-          </h6>
 
-          <div class="sidebar__intro">
-            {{ .Site.Data.settings.intro | markdownify }}
-          </div>
+    <header class="u-bgcolor-blue u-pv-x2 u-mb-x4 u-sticky" style="top: 0">
 
-          <ul class="sidebar__menu">
-            {{ $currentNode := . }}
-            {{ range .Site.Menus.main }}
-              <li{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} class="is-active"{{end}}>
-                <a href="{{ .URL }}">{{ .Name }}</a>
-              </li>
-            {{ end }}
-          </ul>
+      <div class="o-container">
 
-          <p class="sidebar__social">
-            {{ range .Site.Data.settings.socialProfiles }}
-              <a href="{{ .url }}" class="social social--{{ .type }}"></a>
-            {{ end }}
-          </p>
+        Hello Header
 
-          <div class="sidebar__copyright">
-            {{ .Site.Data.settings.copyright }}
-          </div>
-        </div>
       </div>
-      <div class="container__body">
-        <div class="container__mobile-header">
-          <div class="mobile-header">
-            <div class="mobile-header__menu">
-              <a href="#" class="hamburger"></a>
-            </div>
-            <div class="mobile-header__logo">
-              <a href="/index.html">{{ .Site.Data.settings.name }}</a>
-            </div>
-          </div>
-        </div>
+
+    </header>
