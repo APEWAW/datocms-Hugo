@@ -1,8 +1,8 @@
-    <footer class="u-mt-x6">
+    <footer class="u-mt-x6 u-pb-x2">
 
-      <div class="o-container">
+      <div class="o-container o-type-small">
 
-        2019 © {{ .Site.Title }}. Tous droits réservés.
+        {{ .Site.Data.settings.copyright | markdownify }}
 
       </div>
 

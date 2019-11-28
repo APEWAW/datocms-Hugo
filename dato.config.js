@@ -43,10 +43,9 @@ module.exports = (dato, root, i18n) => {
   root.createDataFile('data/settings.yml', 'yaml', {
     name: dato.site.globalSeo.siteName,
     language: dato.site.locales[0],
-    intro: dato.home.introText,
-    copyright: dato.home.copyright,
     faviconMetaTags: toHtml(dato.site.faviconMetaTags),
-    seoMetaTags: toHtml(dato.home.seoMetaTags)
+    copyright: dato.hello.copyright,
+    seoMetaTags: toHtml(dato.hello.seoMetaTags)
   });
 
   // Create a `chapter` directory (or empty it if already exists)...
@@ -62,6 +61,15 @@ module.exports = (dato, root, i18n) => {
         content: chapter.content
       });
     });
+  });
+
+  // Create a markdown file with content coming from the `hello` item
+  // type stored in DatoCMS
+  root.createPost(`content/hello.md`, 'yaml', {
+    frontmatter: {
+      title: dato.hello.title
+    },
+    content: dato.hello.content
   });
 
 };

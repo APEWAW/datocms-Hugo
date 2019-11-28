@@ -1,12 +1,12 @@
-<h3 class="u-pb-x2">
+<p class="u-weight-bold u-pb-x2">
 
-  Go to section
+  Sommaire
 
-</h3>
+</p>
 
 <ul class="o-list">
 
-  {{ range where $.Site.RegularPages "Section" "chapters" }}
+  {{ range (where $.Site.RegularPages "Section" "chapters").ByDate.Reverse }}
 
     <li class="o-list__item">
 
