@@ -1,4 +1,5 @@
 baseurl = "/"
+title= "Le Vademecum de l'EAP"
 Paginate = 5
 
 [params]

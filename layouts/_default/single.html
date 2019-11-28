@@ -4,11 +4,47 @@
 
     <div class="o-grid">
 
-      <div class="o-grid__col">
+      <div class="o-grid__col u-4/12">
 
-        <h1>{{ .Title }}</h1>
+        {{ partial "side.html" . }}
+
+      </div>
+
+      <div class="o-grid__col u-6/12">
+
+        <h1 class="u-pb-x3">
+
+          {{ .Title }}
+
+        </h1>
+
+        <div class="u-pb-x2">
+
+          {{ .Param "Excerpt" }}
+
+        </div>
 
         {{ .Content }}
+
+        <!-- {{ range .Params.content }}
+
+          {{ if eq .itemType "text" }}
+
+            {{ .text | markdownify }}
+
+          {{ else if eq .itemType "image" }}
+
+            <figure class="u-mv">
+
+              {{ . }}
+
+                <img src="{{ . }}" />
+
+            </figure>
+
+          {{ end }}
+
+        {{ end }} -->
 
       </div>
 

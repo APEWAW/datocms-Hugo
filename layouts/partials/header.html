@@ -30,11 +30,15 @@
 
   <body>
 
-    <header class="u-bgcolor-blue u-pv-x2 u-mb-x4 u-sticky" style="top: 0">
+    <header class="u-bgcolor-blue u-pv u-mb-x4">
 
       <div class="o-container">
 
-        Hello Header
+        <a href="{{ .Site.BaseURL }}" class="u-color-white">
+
+          {{ .Site.Title }}
+
+        </a>
 
       </div>
 

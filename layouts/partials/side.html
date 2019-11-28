@@ -1,0 +1,23 @@
+<h3 class="u-pb-x2">
+
+  Go to section
+
+</h3>
+
+<ul class="o-list">
+
+  {{ range where $.Site.RegularPages "Section" "chapters" }}
+
+    <li class="o-list__item">
+
+      <a href="{{ .Permalink }}" class="u-color-blue">
+
+        {{ .Title }}
+
+      </a>
+
+    </li>
+
+  {{ end }}
+
+</ul>

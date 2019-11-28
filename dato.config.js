@@ -45,70 +45,23 @@ module.exports = (dato, root, i18n) => {
     language: dato.site.locales[0],
     intro: dato.home.introText,
     copyright: dato.home.copyright,
-    // iterate over all the `social_profile` item types
-    socialProfiles: dato.socialProfiles.map(profile => {
-      return {
-        type: profile.profileType.toLowerCase().replace(/ +/, '-'),
-        url: profile.url,
-      };
-    }),
     faviconMetaTags: toHtml(dato.site.faviconMetaTags),
     seoMetaTags: toHtml(dato.home.seoMetaTags)
   });
 
-  // Create a markdown file with content coming from the `about_page` item
-  // type stored in DatoCMS
-  root.createPost(`content/about.md`, 'yaml', {
-    frontmatter: {
-      title: dato.aboutPage.title,
-      subtitle: dato.aboutPage.subtitle,
-      photo: dato.aboutPage.photo.url({ w: 800, fm: 'jpg', auto: 'compress' }),
-      seoMetaTags: toHtml(dato.aboutPage.seoMetaTags),
-      menu: { main: { weight: 100 } }
-    },
-    content: dato.aboutPage.bio
-  });
-
-  // Create a `work` directory (or empty it if already exists)...
-  root.directory('content/works', dir => {
-    // ...and for each of the works stored online...
-    dato.works.forEach((work, index) => {
-      // ...create a markdown file with all the metadata in the frontmatter
-      dir.createPost(`${work.slug}.md`, 'yaml', {
-        frontmatter: {
-          title: work.title,
-          coverImage: work.coverImage.url({ w: 450, fm: 'jpg', auto: 'compress' }),
-          image: work.coverImage.url({ fm: 'jpg', auto: 'compress' }),
-          detailImage: work.coverImage.url({ w: 600, fm: 'jpg', auto: 'compress' }),
-          excerpt: work.excerpt,
-          seoMetaTags: toHtml(work.seoMetaTags),
-          extraImages: work.gallery.map(item =>
-            item.url({ h: 300, fm: 'jpg', auto: 'compress' })
-          ),
-          weight: index
-        },
-        content: work.description
-      });
-    });
-  });
-
-
-  // Create a `work` directory (or empty it if already exists)...
+  // Create a `chapter` directory (or empty it if already exists)...
   root.directory('content/chapters', dir => {
     // ...and for each of the works stored online...
     dato.chapters.forEach((chapter, index) => {
       // ...create a markdown file with all the metadata in the frontmatter
       dir.createPost(`${chapter.slug}.md`, 'yaml', {
         frontmatter: {
-          title: chapter.title
+          title: chapter.title,
+          excerpt: chapter.excerpt
         },
         content: chapter.content
       });
     });
   });
-
-
-
-
 
 };
