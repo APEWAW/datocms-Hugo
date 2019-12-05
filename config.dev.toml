@@ -5,11 +5,7 @@ Paginate = 5
 [params]
   env = "development"
 
-[[menu.main]]
-  name = "Home"
-  weight = 1
-  identifier = "home"
-  url = "/"
+disableKinds = ["taxonomy", "taxonomyTerm"]
 
 # datocms:start
 title = "La Vademecum de l'EAP"

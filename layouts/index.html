@@ -2,13 +2,48 @@
 
 <div class="o-container">
 
+    <div class="o-grid o-grid--equal-height">
+
+      {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
+
+        <div class="o-grid__col u-6/12@sm u-4/12@md">
+
+            <div class="c-card u-mb-x2 u-mr@sm">
+
+              <a href="{{ .Permalink }}">
+
+                <img src="https://images.unsplash.com/photo-1487700160041-babef9c3cb55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1635&q=80" alt="" />
+
+                <div class="c-card__body">
+
+                  <h2>{{ .Title }}</h2>
+
+                  {{ .Param "excerpt" }}
+
+                </div>
+
+              </a>
+
+            </div>
+
+
+
+        </div>
+
+      {{ end }}
+
+    </div>
+
+
+  <!--
+
   <div class="o-grid">
 
-    <div class="o-grid__col u-4/12">
+    <aside class="o-grid__col u-4/12">
 
       {{ partial "side.html" . }}
 
-    </div>
+    </aside>
 
     <div class="o-grid__col u-6/12">
 
@@ -22,11 +57,23 @@
 
         {{ .Content }}
 
+        {{ with .Params.image }}
+
+          <figure>
+
+            <img src="{{ .url }}" alt="{{ .alt }}" />
+
+          </figure>
+
+        {{ end }}
+
       {{ end }}
 
     </div>
 
   </div>
+
+  -->
 
 </div>
 

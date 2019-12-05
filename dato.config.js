@@ -56,7 +56,9 @@ module.exports = (dato, root, i18n) => {
       dir.createPost(`${chapter.slug}.md`, 'yaml', {
         frontmatter: {
           title: chapter.title,
-          excerpt: chapter.excerpt
+          excerpt: chapter.excerpt,
+          order: chapter.order,
+          modular: chapter.modular.toMap()
         },
         content: chapter.content
       });
@@ -67,7 +69,8 @@ module.exports = (dato, root, i18n) => {
   // type stored in DatoCMS
   root.createPost(`content/hello.md`, 'yaml', {
     frontmatter: {
-      title: dato.hello.title
+      title: dato.hello.title,
+      image: dato.hello.image.toMap()
     },
     content: dato.hello.content
   });

@@ -28,9 +28,9 @@
 
   </head>
 
-  <body>
+  <body {{ if in .URL "print" }} onload="window.print()" {{ end }}>
 
-    <header class="u-bgcolor-blue u-pv u-mb-x4">
+    <header class="u-bgcolor-blue u-pv-x2 u-mb-x4">
 
       <div class="o-container">
 
@@ -38,7 +38,7 @@
 
           <a href="{{ .Site.BaseURL }}" class="u-color-white">
 
-            {{ .Site.Title }}
+            <img src="https://www.datocms-assets.com/18427/1575535037-eap-vademecum.png" alt="{{ .Site.Title }}" class="u-block" style="height: 70px; margin: auto"/>
 
           </a>
 

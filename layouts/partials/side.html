@@ -6,7 +6,7 @@
 
 <ul class="o-list">
 
-  {{ range (where $.Site.RegularPages "Section" "chapters").ByDate.Reverse }}
+  {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
 
     <li class="o-list__item">
 

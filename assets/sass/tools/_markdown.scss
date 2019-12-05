@@ -1,4 +1,3 @@
-
 h2 {
   @extend .u-pv;
   @extend .u-pt-x2;
@@ -20,10 +19,11 @@ ul {
 
 figure {
   @extend .u-pv;
-  @extend .u-pt-x2;
+
 
   figcaption {
     @extend .u-pt;
+    @extend .u-pb;
     font-size: $baseline / 1.2;
   }
 }

@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+
+  <div class="o-container">
+
+    {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
+
+      <h2>
+
+        {{ .Title }}
+
+      </h2>
+
+      {{ .Content }}
+
+    {{ end }}
+
+  </div>
+
+{{ partial "footer.html" . }}
