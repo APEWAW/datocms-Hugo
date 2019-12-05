@@ -4,10 +4,19 @@
     margin: 2cm;
   }
 
+  .o-container {
+    width: 70%;
+    margin: auto;
+  }
+
   aside,
   footer,
   header {
-    // display: none !important;
+    display: none !important;
+  }
+
+  .u-hidden {
+    display: block !important;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -22,6 +31,4 @@
   figure {
     break-inside: avoid;
   }
-
-
 }

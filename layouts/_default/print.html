@@ -2,6 +2,16 @@
 
   <div class="o-container">
 
+    <div class="u-hidden">
+
+      <p>
+
+        Page de garde
+
+      </p>
+
+    </div>
+
     {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
 
       <h2>
@@ -11,6 +21,31 @@
       </h2>
 
       {{ .Content }}
+
+      {{ range .Params.modular }}
+
+        {{ if eq .itemType "text" }}
+
+          {{ .text | markdownify }}
+
+        {{ else if eq .itemType "image" }}
+
+          <figure>
+
+            <img src="{{ (index .image).url }}" alt="{{ (index .image).alt }}" />
+
+            <figcaption>
+
+              {{ (index .image).alt }}
+
+            </figcaption>
+
+          </figure>
+
+        {{ end }}
+
+      {{ end }}
+
 
     {{ end }}
 

@@ -75,4 +75,13 @@ module.exports = (dato, root, i18n) => {
     content: dato.hello.content
   });
 
+  // Create a markdown file with content coming from the `hello` item
+  // type stored in DatoCMS
+  root.createPost(`content/print.md`, 'yaml', {
+    frontmatter: {
+      title: dato.print.title,
+      layout: dato.print.layout
+    }
+  });
+
 };
