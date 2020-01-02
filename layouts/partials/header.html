@@ -26,6 +26,10 @@
 
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 
+    {{ template "_internal/opengraph.html" . }}
+
+    {{ template "_internal/twitter_cards.html" . }}
+
   </head>
 
   <body {{ if in .URL "print" }} onload="window.print()" {{ end }}>
