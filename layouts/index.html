@@ -2,6 +2,12 @@
 
 <div class="o-container">
 
+    <p class="u-weight-bold u-pb-x2">
+
+      Sommaire
+
+    </p>
+
     <div class="o-grid o-grid--equal-height">
 
       {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
@@ -12,13 +18,27 @@
 
               <a href="{{ .Permalink }}">
 
-                <img src="https://images.unsplash.com/photo-1487700160041-babef9c3cb55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1635&q=80" alt="" />
+                {{ with .Param "cover" }}
 
-                <div class="c-card__body">
+                  <img class="c-grayscale" src="{{ (.).url }}?fit=crop&w=768&h=480" alt="{{ (.).alt }}" />
+
+                {{ end }}
+
+                <div class="c-card__body u-pv">
+
+                  <span class="o-type-xsmall u-uppercase">
+
+                    Chapitre {{ .Param "order" }}
+
+                  </span>
 
                   <h2>{{ .Title }}</h2>
 
-                  {{ .Param "excerpt" }}
+                  <p class="u-pt u-pb-x0 o-type-small">
+
+                    {{ .Param "excerpt" }}
+
+                  </p>
 
                 </div>
 
@@ -31,47 +51,6 @@
       {{ end }}
 
     </div>
-
-
-  <!--
-
-  <div class="o-grid">
-
-    <aside class="o-grid__col u-4/12">
-
-      {{ partial "side.html" . }}
-
-    </aside>
-
-    <div class="o-grid__col u-6/12">
-
-      {{ with .Site.GetPage "/hello.md" }}
-
-        <h1>
-
-          {{ .Title }}
-
-        </h1>
-
-        {{ .Content }}
-
-        {{ with .Params.image }}
-
-          <figure>
-
-            <img src="{{ .url }}" alt="{{ .alt }}" />
-
-          </figure>
-
-        {{ end }}
-
-      {{ end }}
-
-    </div>
-
-  </div>
-
-  -->
 
 </div>
 

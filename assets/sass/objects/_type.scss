@@ -14,7 +14,11 @@ $iota-objs-type-namespace: 'type-';
  */
 
 $iota-objs-type-sizes: (
-   small: ( 14px, $baseline )
+  default: $baseline,
+  xsmall: 11px,
+  small: 14px ($baseline * 1.25),
+  medium: 20px,
+  large: 24px
 );
 
 

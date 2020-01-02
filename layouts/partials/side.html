@@ -1,20 +1,34 @@
-<p class="u-weight-bold u-pb-x2">
+<ul class="o-list o-list--block o-type-small">
 
-  Sommaire
-
-</p>
-
-<ul class="o-list">
+  {{ $current:= .Permalink }}
 
   {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
 
-    <li class="o-list__item">
+    <li class="o-list__item {{ if eq .Permalink $current }} u-bgcolor-blue  {{ end }}">
 
-      <a href="{{ .Permalink }}" class="u-color-blue">
+      <div class="o-media o-media--middle">
 
-        {{ .Title }}
+        <div class="o-media__fixed">
 
-      </a>
+          {{ with .Param "cover" }}
+
+            <img class="c-grayscale" src="{{ (.).url }}?fit=crop&w=40&h=40" alt="{{ (.).alt }}" />
+
+          {{ end }}
+
+        </div>
+
+        <div class="o-media__fluid">
+
+          <a href="{{ .Permalink }}" class="{{ if eq .Permalink $current }} u-color-white u-weight-bold {{ else }} u-color-blue {{ end }}">
+
+            {{ .Title }}
+
+          </a>
+
+        </div>
+
+      </div>
 
     </li>
 

@@ -34,15 +34,15 @@
 
       <div class="o-container">
 
-        <h1>
+        {{ if .IsHome }} <h1> {{ end }}
 
           <a href="{{ .Site.BaseURL }}" class="u-color-white">
 
-            <img src="https://www.datocms-assets.com/18427/1575535037-eap-vademecum.png" alt="{{ .Site.Title }}" class="u-block" style="height: 70px; margin: auto"/>
+            <img src="https://www.datocms-assets.com/18427/1575535037-eap-vademecum.png" alt="{{ .Site.Title }}" class="u-block" style="max-height: 70px; margin: auto"/>
 
           </a>
 
-        </h1>
+        {{ if .IsHome }} </h1> {{ end }}
 
       </div>
 

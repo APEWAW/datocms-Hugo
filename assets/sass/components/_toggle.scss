@@ -1,0 +1,16 @@
+.c-toggle {
+  @extend .u-hidden;
+  width: 100%;
+  height: 100%;
+
+}
+
+label[for=check] {
+  cursor: pointer;
+}
+
+input:checked {
+   + .c-toggle {
+    @extend .u-block;
+  }
+}

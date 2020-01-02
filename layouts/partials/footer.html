@@ -2,21 +2,21 @@
 
       <div class="o-container o-type-small">
 
-        <p>
-
-          <a href="/print" target="_blank" class="u-color-black">
-
-            Version imprimable
-
-          </a>
-
-        </p>
-
         {{ .Site.Data.settings.copyright | markdownify }}
 
       </div>
 
     </footer>
+
+    {{ if not (in .URL "print") }}
+
+      <a href="/print" target="_blank" class="u-color-white u-weight-bold u-bgcolor-cyan u-p u-fixed o-type-small" style="bottom: 16px; right: 16px;">
+
+        Version imprimable
+
+      </a>
+
+    {{ end }}
 
   </body>
 

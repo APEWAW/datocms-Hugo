@@ -7,7 +7,6 @@
 
 @import 'tools/core';
 @import 'tools/breakpoint';
-@import 'tools/markdown';
 @import 'tools/ms';
 @import 'tools/rtl';
 @import 'tools/type';
@@ -21,6 +20,10 @@
 @import 'objects/type';
 
 @import 'components/card';
+@import 'components/chapter';
+@import 'components/filter';
+@import 'components/toggle';
+@import 'components/video';
 
 @import 'utilities/align-items';
 @import 'utilities/align';

@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Ruda:400,700&display=swap');
+
 body {
-  font-family: Open Sans;
+  font-family: 'Open Sans', sans-serif;
   font-size: $baseline;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ruda', sans-serif;
+  }
 
   p {
     padding-bottom: $baseline;
@@ -13,6 +19,12 @@ body {
     &:hover {
       text-decoration: underline;
     }
+
+    &.u-bgcolor-blue {
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 
   h1 a {
@@ -20,5 +32,9 @@ body {
     &:hover {
       text-decoration: none;
     }
+  }
+
+  .u-uppercase {
+    letter-spacing: 1px;
   }
 }

@@ -1,10 +1,7 @@
 .c-card {
-  border: 1px solid #ddd;
   width: 100%;
 
-  .c-card__body {
-    padding: $baseline $baseline-x2 $baseline-x2;
-  }
+  .c-card__body { }
 
   &:hover {
     border-color: $color-blue;

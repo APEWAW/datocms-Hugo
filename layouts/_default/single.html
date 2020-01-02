@@ -2,22 +2,62 @@
 
   <div class="o-container">
 
-    <div class="o-grid">
+    <div class="u-bgcolor-grey u-p u-mb-x3 u-ph u-block u-sticky u-hidden@sm" style="top: 0">
 
-      <aside class="o-grid__col u-3/12">
+      <label for="check" class="u-weight-bold u-text-center u-block">
+
+        <span class="o-type-medium">
+
+          &#x2630;
+
+        </span>
+
+        Sommaire
+
+      </label>
+
+      <input id="check" type="checkbox" class="u-hidden">
+
+      <div class="c-toggle u-mv-x2">
 
         {{ partial "side.html" . }}
 
+      </div>
+
+    </div>
+
+    <div class="o-grid">
+
+      <aside class="o-grid__col u-hidden u-block@sm u-4/12@sm u-3/12@md">
+
+        <div class="u-sticky@sm" style="top: 16px">
+
+          <p class="u-weight-bold u-pb-x2">
+
+            Sommaire
+
+          </p>
+
+          {{ partial "side.html" . }}
+
+        </div>
+
       </aside>
 
-      <div class="o-grid__col u-7/12 u-push-1/12">
+      <div class="c-chapter o-grid__col u-8/12@sm u-7/12@md u-push-1/12@md">
 
-        <h1 class="u-pb-x2">
+        <span class="o-type-xsmall u-uppercase">
+
+          Chapitre {{ .Param "order" }}
+
+        </span>
+
+        <h1 class="u-pb-x2 o-type-large">
 
           {{ .Title }}
 
         </h1>
-
+        
         <div class="u-pb-x2">
 
           {{ .Param "Excerpt" }}
@@ -30,7 +70,19 @@
 
           {{ if eq .itemType "text" }}
 
-            {{ .text | markdownify }}
+            {{ if in (string .text) "\n\n" }}
+
+              {{ .text | markdownify }}
+
+            {{ else }}
+
+              <p>
+
+                {{ .text | markdownify }}
+
+              </p>
+
+            {{ end }}
 
           {{ else if eq .itemType "image" }}
 
@@ -45,6 +97,36 @@
               </figcaption>
 
             </figure>
+
+          {{ else if eq .itemType "video" }}
+
+            {{ $provider:= (index .video).provider }}
+
+            {{ $video:= (index .video).providerUid }}
+
+            <div class="c-video">
+
+              {{ if eq $provider "youtube" }}
+
+                <iframe src="https://www.youtube.com/embed/{{ $video }}" frameborder="0" allowfullscreen>
+
+                </iframe>
+
+              {{ else if eq $provider "vimeo" }}
+
+                <iframe src="https://player.vimeo.com/video/{{ $video }}" frameborder="0" allowfullscreen>
+
+                </iframe>
+
+              {{ else if eq $provider "facebook" }}
+
+                <iframe src="http://www.facebook.com/video/embed?video_id={{ $video }}"  frameborder="0" allowFullScreen>
+
+                </iframe>
+
+              {{ end }}
+
+            </div>
 
           {{ end }}
 

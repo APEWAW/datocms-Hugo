@@ -1,9 +1,13 @@
 $color-black : #000;
 $color-white : #fff;
-$color-blue : #3C5896;
+$color-blue  : #3C5896;
+$color-grey  : #eee;
+$color-cyan  : #00a9c4;
 
 $colors: (
   'black' : $color-black,
   'white' : $color-white,
-  'blue' : $color-blue
+  'blue'  : $color-blue,
+  'grey'  : $color-grey,
+  'cyan'  : $color-cyan
 );

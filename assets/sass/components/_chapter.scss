@@ -1,0 +1,62 @@
+.c-chapter {
+
+  h2 {
+    @extend .o-type-medium;
+    @extend .u-pv;
+    @extend .u-pt-x2;
+  }
+
+  h3, h4, h5, h6 {
+    @extend .o-type-default;
+    @extend .u-pv;
+  }
+
+  ul {
+    @extend .o-list;
+    @extend .o-list--block;
+    @extend .u-ph-x2;
+    @extend .u-pb;
+
+    li {
+      @extend .o-list__item;
+
+      &:before {
+        content: '\2014';
+        margin-left: -$baseline * 1.5;
+        position: absolute;
+        z-index: -10;
+        }
+
+      &:not(:last-child) {
+        margin-bottom: $baseline / 1.45 !important;
+      }
+    }
+  }
+
+  figure {
+    @extend .u-pb;
+
+
+    figcaption {
+      @extend .u-pt;
+      @extend .u-pb;
+      font-size: $baseline / 1.2;
+    }
+  }
+
+  .footnotes {
+    @extend .u-pt-x4;
+
+    hr {
+      width: 30px;
+      @extend .u-mb;
+    }
+
+    ol {
+
+      li {
+        font-size: $baseline / 1.2;
+      }
+    }
+  }
+}
