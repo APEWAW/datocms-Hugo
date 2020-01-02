@@ -1,0 +1,10 @@
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:description" content="{{ .Param "Excerpt" }}" />
+<meta property="og:type" content="" />
+<meta property="og:url" content="{{ .Site.BaseURL }} {{ .Permalink }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:image" content="{{ (.Param "cover").url }}?fit=crop&w=800&h=320" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="{{ .Title }}"/>
+<meta name="twitter:description" content="{{ .Param "Excerpt" }}"/>
