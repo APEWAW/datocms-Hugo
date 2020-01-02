@@ -71,6 +71,7 @@ module.exports = (dato, root, i18n) => {
   root.createPost(`content/hello.md`, 'yaml', {
     frontmatter: {
       title: dato.hello.title,
+      excerpt: dato.hello.excerpt,
       image: dato.hello.cover.toMap()
     },
     content: dato.hello.content
