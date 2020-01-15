@@ -58,6 +58,7 @@ module.exports = (dato, root, i18n) => {
           title: chapter.title,
           excerpt: chapter.excerpt,
           order: chapter.order,
+          display: chapter.display,
           cover: chapter.cover.toMap(),
           modular: chapter.modular.toMap()
         },
@@ -72,12 +73,12 @@ module.exports = (dato, root, i18n) => {
     frontmatter: {
       title: dato.hello.title,
       excerpt: dato.hello.excerpt,
-      image: dato.hello.cover.toMap()
+      cover: dato.hello.cover.toMap()
     },
     content: dato.hello.content
   });
 
-  // Create a markdown file with content coming from the `hello` item
+  // Create a markdown file with content coming from the `print` item
   // type stored in DatoCMS
   root.createPost(`content/print.md`, 'yaml', {
     frontmatter: {
@@ -85,5 +86,25 @@ module.exports = (dato, root, i18n) => {
       layout: dato.print.layout
     }
   });
+
+  // Create a markdown file with content coming from the `print` item
+  // type stored in DatoCMS
+  root.createPost(`content/action.md`, 'yaml', {
+    frontmatter: {
+      title: dato.action.title
+    },
+    content: dato.action.content
+  });
+
+  // Create a markdown file with content coming from the `print` item
+  // type stored in DatoCMS
+  root.createPost(`content/thank.md`, 'yaml', {
+    frontmatter: {
+      title: dato.thank.title,
+      slug: dato.thank.slug
+    },
+    content: dato.thank.content
+  });
+
 
 };

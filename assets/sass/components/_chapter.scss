@@ -1,5 +1,4 @@
 .c-chapter {
-
   h2 {
     @extend .o-type-medium;
     @extend .u-pv;
@@ -42,6 +41,32 @@
       @extend .u-pb;
       font-size: $baseline / 1.2;
     }
+  }
+
+  blockquote {
+    @extend .u-pl-x3;
+    @extend .u-pr-x3;
+    position: relative;
+    font-style: italic;
+    z-index: -10;
+
+    &:before {
+      content:" ‟ ";
+      color: $color-blue;
+      margin-left: -$baseline * 3;
+      position: absolute;
+      top: -$baseline * 2;
+      z-index: -10;
+
+      font-size: 100px;
+      font-weight: 400;
+    }
+
+    & + p {
+      padding-left: $baseline-x2;
+    }
+
+
   }
 
   .footnotes {

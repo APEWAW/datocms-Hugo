@@ -18,51 +18,68 @@
 
       <input id="check" type="checkbox" class="u-hidden">
 
+
+
       <div class="c-toggle u-mv-x2">
 
         {{ partial "side.html" . }}
 
       </div>
 
+
+
     </div>
 
     <div class="o-grid">
 
-      <aside class="o-grid__col u-hidden u-block@sm u-4/12@sm u-3/12@md">
 
-        <div class="u-sticky@sm" style="top: 16px">
+      {{ if eq .Section "chapters" }}
 
-          <p class="u-weight-bold u-pb-x2">
+        <aside class="o-grid__col u-hidden u-block@sm u-4/12@sm u-3/12@md">
 
-            Sommaire
+          <div class="u-sticky@sm" style="top: 16px">
 
-          </p>
+            <p class="u-weight-bold u-pb-x2">
 
-          {{ partial "side.html" . }}
+              Sommaire
 
-        </div>
+            </p>
 
-      </aside>
+            {{ partial "side.html" . }}
 
-      <div class="c-chapter o-grid__col u-8/12@sm u-7/12@md u-push-1/12@md">
+          </div>
 
-        <span class="o-type-xsmall u-uppercase">
+        </aside>
 
-          Chapitre {{ .Param "order" }}
+      {{ end }}
 
-        </span>
+      <div class="c-chapter o-grid__col u-8/12@sm u-7/12@md {{ if eq .Section "chapters" }} u-push-1/12@md {{ end }}">
+
+        {{ if eq .Section "chapters" }}
+
+          <span class="o-type-xsmall u-uppercase">
+
+            Chapitre {{ .Param "order" }}
+
+          </span>
+
+        {{ end }}
 
         <h1 class="u-pb-x2 o-type-large">
 
           {{ .Title }}
 
         </h1>
-        
-        <div class="u-pb-x2">
 
-          {{ .Param "Excerpt" }}
+        <!-- {{ with .Param "excerpt" }}
 
-        </div>
+          <div class="u-pb-x3">
+
+            {{ . }}
+
+          </div>
+
+        {{ end }} -->
 
         {{ .Content }}
 
@@ -86,17 +103,38 @@
 
           {{ else if eq .itemType "image" }}
 
-            <figure>
+            <figure class="u-mv">
 
               <img src="{{ (index .image).url }}" alt="{{ (index .image).alt }}" />
 
-              <figcaption>
+              <figcaption class="u-text-center">
 
-                {{ (index .image).alt }}
+                {{ (index .image).title }}
 
               </figcaption>
 
             </figure>
+
+          {{ else if eq .itemType "box" }}
+
+          <div class="u-border u-pl-x2 u-pr u-mv">
+
+            {{ if in (string .box) "\n\n" }}
+
+              {{ .box | markdownify }}
+
+            {{ else }}
+
+              <p>
+
+                {{ .box | markdownify }}
+
+              </p>
+
+            {{ end }}
+
+          </div>
+
 
           {{ else if eq .itemType "video" }}
 

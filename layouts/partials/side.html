@@ -4,7 +4,7 @@
 
   {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
 
-    <li class="o-list__item {{ if eq .Permalink $current }} u-bgcolor-blue  {{ end }}">
+    <li class="o-list__item {{ if eq .Permalink $current }} u-bgcolor-blue  {{ end }} {{ if not (.Param "display") }} u-disabled {{ end }}">
 
       <div class="o-media o-media--middle">
 

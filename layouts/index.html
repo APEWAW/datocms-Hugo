@@ -2,11 +2,50 @@
 
 <div class="o-container">
 
+  <div class="o-grid u-pb-x2">
+
+    <div class="o-grid__col u-8/12@md">
+
+      {{ with .Site.GetPage "/hello.md" }}
+
+        <h1 class="o-type-large u-pb">
+
+          {{ .Title }}
+
+        </h1>
+
+        <p>
+
+          {{ .Param "excerpt" }}
+
+        </p>
+
+      {{ end }}
+
+    </div>
+
+    <div class="o-grid__col u-6/12@sm">
+
+      {{ with .Param "cover" }}
+
+        <img class="c-grayscale" src="{{ (.).url }}?fit=crop&w=768&h=480" alt="{{ (.).alt }}" />
+
+      {{ end }}
+
+    </div>
+
+
+
+  </div>
+
+
     <p class="u-weight-bold u-pb-x2">
 
       Sommaire
 
     </p>
+
+
 
     <div class="o-grid o-grid--equal-height">
 
@@ -14,7 +53,7 @@
 
         <div class="o-grid__col u-6/12@sm u-4/12@md">
 
-            <div class="c-card u-mb-x2 u-mr@sm">
+            <div class="c-card u-mb-x2 u-mr@sm {{ if not (.Param "display") }} u-disabled {{ end }}">
 
               <a href="{{ .Permalink }}">
 
@@ -32,7 +71,17 @@
 
                   </span>
 
-                  <h2>{{ .Title }}</h2>
+
+
+
+
+
+
+                  <h2>
+
+                    {{ .Title }}
+
+                  </h2>
 
                   <p class="u-pt u-pb-x0 o-type-small">
 
@@ -51,6 +100,8 @@
       {{ end }}
 
     </div>
+
+    {{ partial "action.html" . }}
 
 </div>
 

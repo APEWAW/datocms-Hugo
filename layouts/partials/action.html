@@ -1,0 +1,23 @@
+<div class="o-grid u-mt-x2">
+
+  <div class="o-grid__col u-8/12@md">
+
+    <div class="c-action">
+
+      {{ with .Site.GetPage "/action.md" }}
+
+        <p class="o-type-medium u-pb">
+
+          {{ .Title }}
+
+        </p>
+
+        {{ .Content | markdownify }}
+
+      {{ end }}
+
+    </div>
+
+  </div>
+
+</div>
