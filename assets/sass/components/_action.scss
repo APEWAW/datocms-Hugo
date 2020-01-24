@@ -1,5 +1,10 @@
 .c-action {
 
+  .o-type-medium {
+    @extend .u-weight-bold;
+    font-family: 'Ruda', sans-serif;
+  }
+
   a {
     @extend .u-color-blue;
   }

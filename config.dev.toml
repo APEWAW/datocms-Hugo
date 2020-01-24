@@ -7,6 +7,9 @@ Paginate = 5
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
+[permalinks]
+  chapters = "/:filename"
+
 # datocms:start
 title = "Le petit manuel de la formation présentielle par l'EAP "
 languageCode = "en"

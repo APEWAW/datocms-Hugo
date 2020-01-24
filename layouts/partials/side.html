@@ -1,10 +1,10 @@
-<ul class="o-list o-list--block o-type-small">
+<ul class="c-side o-list o-list--block o-type-small">
 
   {{ $current:= .Permalink }}
 
   {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
 
-    <li class="o-list__item {{ if eq .Permalink $current }} u-bgcolor-blue  {{ end }} {{ if not (.Param "display") }} u-disabled_ {{ end }}">
+    <li class="o-list__item {{ if eq .Permalink $current }} u-bgcolor-blue  {{ end }} {{ if not (.Param "display") }} u-disabled {{ end }}">
 
       <!-- <div class="o-media o-media--middle">
 
@@ -20,7 +20,7 @@
 
         <div class="o-media__fluid">  -->
 
-          <a href="{{ .Permalink }}" class="{{ if eq .Permalink $current }} u-color-white u-weight-bold {{ else }} u-color-blue {{ end }}" style="">
+          <a href="{{ .Permalink }}" class="u-block {{ if eq .Permalink $current }} u-color-white c-side__current {{ else }} u-color-blue {{ end }}">
 
             {{ .Title }}
 

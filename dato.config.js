@@ -106,5 +106,4 @@ module.exports = (dato, root, i18n) => {
     content: dato.thank.content
   });
 
-
 };

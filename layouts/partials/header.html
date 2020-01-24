@@ -36,15 +36,11 @@
 
       <div class="o-container">
 
-        {{ if .IsHome }} <h1> {{ end }}
+        <a href="{{ .Site.BaseURL }}" class="u-color-white">
 
-          <a href="{{ .Site.BaseURL }}" class="u-color-white">
+          <img src="https://www.datocms-assets.com/18427/1579865349-eap-manuel-logo.png" alt="{{ .Site.Title }}" class="u-block" style="max-height: 70px;" />
 
-            <img src="https://www.datocms-assets.com/18427/1579865349-eap-manuel-logo.png" alt="{{ .Site.Title }}" class="u-block" style="max-height: 70px;"/>
-
-          </a>
-
-        {{ if .IsHome }} </h1> {{ end }}
+        </a>
 
       </div>
 

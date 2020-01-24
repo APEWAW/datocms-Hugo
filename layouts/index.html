@@ -16,7 +16,7 @@
 
         <p>
 
-          {{ .Param "excerpt" }}
+          {{ .Param "excerpt" | markdownify }}
 
         </p>
 
@@ -34,68 +34,57 @@
 
     </div>
 
-
-
   </div>
 
+  <p class="u-weight-bold u-pb-x2">
 
-    <p class="u-weight-bold u-pb-x2">
+    Sommaire
 
-      Sommaire
+  </p>
 
-    </p>
+  <div class="o-grid o-grid--equal-height">
 
+    {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
 
+      <div class="o-grid__col u-6/12@sm u-4/12@md">
 
-    <div class="o-grid o-grid--equal-height">
+        <div class="c-card u-mb-x2 u-mr@sm {{ if not (.Param "display") }} u-disabled {{ end }}">
 
-      {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
+          <a href="{{ .Permalink }}">
 
-        <div class="o-grid__col u-6/12@sm u-4/12@md">
+            {{ with .Param "cover" }}
 
-            <div class="c-card u-mb-x2 u-mr@sm {{ if not (.Param "display") }} u-disabled {{ end }}">
+              <img class="c-grayscale" src="{{ (.).url }}?fit=crop&w=768&h=480" alt="{{ (.).alt }}" />
 
-              <a href="{{ .Permalink }}">
+            {{ end }}
 
-                {{ with .Param "cover" }}
+            <div class="c-card__body u-pv">
 
-                  <img class="c-grayscale" src="{{ (.).url }}?fit=crop&w=768&h=480" alt="{{ (.).alt }}" />
+              <span class="o-type-xsmall u-uppercase">
 
-                {{ end }}
+                Chapitre {{ .Param "order" }}
 
-                <div class="c-card__body u-pv">
+              </span>
 
-                  <span class="o-type-xsmall u-uppercase">
+              <h2>
 
-                    Chapitre {{ .Param "order" }}
+                {{ .Title }}
 
-                  </span>
+              </h2>
 
+              <p class="u-pt u-pb-x0 o-type-small">
 
+                {{ .Param "excerpt" }}
 
-
-
-
-
-                  <h2>
-
-                    {{ .Title }}
-
-                  </h2>
-
-                  <p class="u-pt u-pb-x0 o-type-small">
-
-                    {{ .Param "excerpt" }}
-
-                  </p>
-
-                </div>
-
-              </a>
+              </p>
 
             </div>
 
+          </a>
+
         </div>
+
+      </div>
 
       {{ end }}
 

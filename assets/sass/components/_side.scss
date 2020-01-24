@@ -1,0 +1,22 @@
+.c-side {
+
+  a {
+    padding: $baseline / 2;
+
+    &:hover {
+      background-color: $color-grey;
+      text-decoration: none !important;
+    }
+  }
+
+  a.c-side__current {
+    background-color: inherit;
+  }
+}
+
+.c-side.o-list--block {
+
+  li {
+    margin-bottom: $baseline / 2.5 !important;
+  }
+}
