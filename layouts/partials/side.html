@@ -4,9 +4,9 @@
 
   {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
 
-    <li class="o-list__item {{ if eq .Permalink $current }} u-bgcolor-blue  {{ end }} {{ if not (.Param "display") }} u-disabled {{ end }}">
+    <li class="o-list__item {{ if eq .Permalink $current }} u-bgcolor-blue  {{ end }} {{ if not (.Param "display") }} u-disabled_ {{ end }}">
 
-      <div class="o-media o-media--middle">
+      <!-- <div class="o-media o-media--middle">
 
         <div class="o-media__fixed">
 
@@ -18,17 +18,17 @@
 
         </div>
 
-        <div class="o-media__fluid">
+        <div class="o-media__fluid">  -->
 
-          <a href="{{ .Permalink }}" class="{{ if eq .Permalink $current }} u-color-white u-weight-bold {{ else }} u-color-blue {{ end }}">
+          <a href="{{ .Permalink }}" class="{{ if eq .Permalink $current }} u-color-white u-weight-bold {{ else }} u-color-blue {{ end }}" style="">
 
             {{ .Title }}
 
           </a>
 
-        </div>
+        <!-- </div>
 
-      </div>
+      </div> -->
 
     </li>
 

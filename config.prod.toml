@@ -1,5 +1,5 @@
 baseurl = "https://eager-brahmagupta-48ef14.netlify.com"
-title= "Le Vademecum de l'EAP"
+title= "Le petit manuel de la formation présentielle par l'EAP"
 Paginate = 5
 
 [params]
@@ -12,6 +12,6 @@ Paginate = 5
   url = "/"
 
 # datocms:start
-title = "La Vademecum de l'EAP"
+title = "Le petit manuel de la formation présentielle par l'EAP "
 languageCode = "en"
 # datocms:end
