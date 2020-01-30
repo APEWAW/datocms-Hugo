@@ -72,6 +72,18 @@
 
               </h2>
 
+              {{ if not (.Param "display") }}
+
+                <span class="o-type-xsmall u-uppercase u-color-blue">
+
+                  À paraître en {{ .Param "release" }}
+
+                </span>
+
+              {{ end }}
+
+
+
               <p class="u-pt u-pb-x0 o-type-small">
 
                 {{ .Param "excerpt" }}

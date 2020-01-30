@@ -59,6 +59,7 @@ module.exports = (dato, root, i18n) => {
           excerpt: chapter.excerpt,
           order: chapter.order,
           display: chapter.display,
+          release: chapter.release,
           cover: chapter.cover.toMap(),
           modular: chapter.modular.toMap()
         },

@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn start
+  /usr/local/bin/node /usr/local/bin/yarn dato
 
 PATH: 
   /Users/Waw3/.rvm/gems/ruby-2.4.2/bin:/Users/Waw3/.rvm/gems/ruby-2.4.2@global/bin:/Users/Waw3/.rvm/rubies/ruby-2.4.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/Waw3/.rvm/bin:/Users/Waw3/.rvm/bin
@@ -6843,7 +6843,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c dato check && concurrently -p "[{name}]" -c "blue,red,green,yellow" -k -n hugo,webpack,livereload,dato "npm run start:hugo" "npm run start:assets" "npm run start:livereload" "npm run start:datocms"
+  Arguments: -c /Users/Waw3/Desktop/DEV/datocms-Hugo/node_modules/.bin/dato
   Directory: /Users/Waw3/Desktop/DEV/datocms-Hugo
   Output:
   

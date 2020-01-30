@@ -24,6 +24,18 @@
 
             {{ .Title }}
 
+            {{ if not (.Param "display") }}
+
+            <br />
+
+              <span class="o-type-xsmall u-uppercase u-color-blue">
+
+                À paraître en {{ .Param "release" }}
+
+              </span>
+
+            {{ end }}
+
           </a>
 
         <!-- </div>

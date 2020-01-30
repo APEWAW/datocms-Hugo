@@ -98,11 +98,11 @@
 
           {{ else if eq .itemType "image" }}
 
-            <figure class="u-mv">
+            <figure class="u-mv u-text-center">
 
-              <img src="{{ (index .image).url }}" alt="{{ (index .image).alt }}" />
+              <img src="{{ (index .image).url }}" alt="{{ (index .image).alt }}"  />
 
-              <figcaption class="u-text-center">
+              <figcaption>
 
                 {{ (index .image).title }}
 
