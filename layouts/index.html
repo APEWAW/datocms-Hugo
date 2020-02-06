@@ -28,7 +28,7 @@
 
       {{ with .Param "cover" }}
 
-        <img class="c-grayscale" src="{{ (.).url }}?fit=crop&w=768&h=480" alt="{{ (.).alt }}" />
+        <img src="{{ (.).url }}?fit=crop&w=720&h=450" alt="{{ (.).alt }}" />
 
       {{ end }}
 
@@ -54,7 +54,7 @@
 
             {{ with .Param "cover" }}
 
-              <img class="c-grayscale" src="{{ (.).url }}?fit=crop&w=768&h=480" alt="{{ (.).alt }}" />
+              <img src="{{ (.).url }}?fit=crop&w=720&h=450" alt="{{ (.).alt }}" />
 
             {{ end }}
 
