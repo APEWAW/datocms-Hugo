@@ -20,11 +20,11 @@
       @extend .o-list__item;
 
       &:before {
-        content: '\2014';
+        content: "—";
         margin-left: -$baseline * 1.5;
         position: absolute;
         z-index: -10;
-        }
+      }
 
       &:not(:last-child) {
         margin-bottom: $baseline / 1.45 !important;
@@ -51,7 +51,7 @@
     z-index: -10;
 
     &:before {
-      content:" ‟ ";
+      content: " ‟ ";
       color: $color-blue;
       margin-left: -$baseline * 3;
       position: absolute;
@@ -65,7 +65,6 @@
     & + p {
       padding-left: $baseline-x2;
     }
-
 
   }
 

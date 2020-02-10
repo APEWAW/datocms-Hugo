@@ -84,8 +84,10 @@ module.exports = (dato, root, i18n) => {
   root.createPost(`content/print.md`, 'yaml', {
     frontmatter: {
       title: dato.print.title,
-      layout: dato.print.layout
-    }
+      layout: dato.print.layout,
+      cover: dato.print.cover.toMap()
+    },
+    content: dato.print.content
   });
 
   // Create a markdown file with content coming from the `print` item

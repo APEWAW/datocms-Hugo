@@ -2,52 +2,149 @@
 
   <div class="o-container">
 
-    <div class="u-hidden">
+    <div class="o-grid u-print-hidden">
 
-      <p>
+      <div class="c-chapter o-grid__col u-6/12@sm">
 
-        Page de garde
+        <h1 class="u-pb-x2 o-type-large">
 
-      </p>
+          {{ .Title }}
 
-    </div>
+        </h1>
 
-    {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
+        <div class="u-mb-x2">
 
-      <h2>
+          {{ .Content }}
 
-        {{ .Title }}
+        </div>
 
-      </h2>
+        <a href="#" class="u-color-white u-weight-bold u-bgcolor-blue u-p o-type-small" onclick="window.print();return false;">
 
-      {{ .Content }}
+          Version imprimable
 
-      {{ range .Params.modular }}
+        </a>
 
-        {{ if eq .itemType "text" }}
+      </div>
 
-          {{ .text | markdownify }}
+      <div class="o-grid__col u-4/12">
 
-        {{ else if eq .itemType "image" }}
+        {{ with .Param "cover" }}
 
-          <figure>
-
-            <img src="{{ (index .image).url }}" alt="{{ (index .image).alt }}" />
-
-            <figcaption class="u-text-center">
-
-              {{ (index .image).title }}
-
-            </figcaption>
-
-          </figure>
+          <img src="{{ (.).url }}" alt="{{ (.).alt }}" />
 
         {{ end }}
 
-      {{ end }}
+      </div>
 
+    </div>
 
-    {{ end }}
+    <div class="u-screen-hidden">
+
+      <img src="https://www.datocms-assets.com/18427/1580919116-eap-guide-cover.png" />
+
+      <div class="c-chapter">
+
+        <h1 class="u-pb-x2 o-type-large">
+
+          Table des matières
+
+        </h1>
+
+        {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
+
+          <ul>
+
+            <li>
+
+              {{ .Title }}
+
+            </li>
+
+          </ul>
+
+        {{ end }}
+
+        {{ range sort (where $.Site.RegularPages "Section" "chapters") ".Params.order" "asc" }}
+
+          <h1 class="u-pb-x2 o-type-large">
+
+            {{ .Title }}
+
+          </h1>
+
+          {{ if not (.Param "display") }}
+
+            <span class="o-type-xsmall u-uppercase u-color-blue">
+
+              À paraître en {{ .Param "release" }}
+
+            </span>
+
+          {{ end }}
+
+          {{ .Content }}
+
+          {{ range .Params.modular }}
+
+            {{ if eq .itemType "text" }}
+
+              {{ .text | markdownify }}
+
+            {{ else if eq .itemType "image" }}
+
+              <figure class="u-mv u-text-center">
+
+                <img src="{{ (index .image).url }}" alt="{{ (index .image).alt }}"  />
+
+                <figcaption>
+
+                  {{ (index .image).title }}
+
+                </figcaption>
+
+              </figure>
+
+            {{ else if eq .itemType "box" }}
+
+              <div class="u-border u-pl-x2 u-pr u-mv">
+
+                {{ if in (string .box) "\n\n" }}
+
+                  {{ .box | markdownify }}
+
+                {{ else }}
+
+                  <p>
+
+                    {{ .box | markdownify }}
+
+                  </p>
+
+                {{ end }}
+
+              </div>
+
+            {{ end }}
+
+          {{ end }}
+
+        {{ end }}
+
+        {{ with .Site.GetPage "/thank.md" }}
+
+          <h1 class="u-pb-x2 o-type-large">
+
+            {{ .Title }}
+
+          </h1>
+
+          {{ .Content }}
+
+        {{ end }}
+
+      </div>
+
+    </div>
 
   </div>
 

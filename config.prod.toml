@@ -11,6 +11,6 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
   chapters = "/:filename"
 
 # datocms:start
-title = "Le Guide de la formation présentielle, par l’EAP"
+title = "Le petit manuel de la formation présentielle par l'EAP "
 languageCode = "en"
 # datocms:end
