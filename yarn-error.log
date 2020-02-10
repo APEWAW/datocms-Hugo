@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn dato
+  /usr/local/bin/node /usr/local/bin/yarn dato dump
 
 PATH: 
   /Users/Waw3/.rvm/gems/ruby-2.4.2/bin:/Users/Waw3/.rvm/gems/ruby-2.4.2@global/bin:/Users/Waw3/.rvm/rubies/ruby-2.4.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/Waw3/.rvm/bin:/Users/Waw3/.rvm/bin
@@ -6843,7 +6843,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c /Users/Waw3/Desktop/DEV/datocms-Hugo/node_modules/.bin/dato
+  Arguments: -c /Users/Waw3/Desktop/DEV/datocms-Hugo/node_modules/.bin/dato dump
   Directory: /Users/Waw3/Desktop/DEV/datocms-Hugo
   Output:
   

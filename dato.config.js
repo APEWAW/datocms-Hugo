@@ -45,7 +45,7 @@ module.exports = (dato, root, i18n) => {
     language: dato.site.locales[0],
     faviconMetaTags: toHtml(dato.site.faviconMetaTags),
     copyright: dato.hello.copyright,
-    seoMetaTags: toHtml(dato.hello.seoMetaTags)
+    seo: toHtml(dato.hello.seoMetaTags)
   });
 
   // Create a `chapter` directory (or empty it if already exists)...
@@ -61,7 +61,8 @@ module.exports = (dato, root, i18n) => {
           display: chapter.display,
           release: chapter.release,
           cover: chapter.cover.toMap(),
-          modular: chapter.modular.toMap()
+          modular: chapter.modular.toMap(),
+          seo: toHtml(dato.hello.seoMetaTags)
         },
         content: chapter.content
       });
@@ -74,7 +75,8 @@ module.exports = (dato, root, i18n) => {
     frontmatter: {
       title: dato.hello.title,
       excerpt: dato.hello.excerpt,
-      cover: dato.hello.cover.toMap()
+      cover: dato.hello.cover.toMap(),
+      seo: toHtml(dato.hello.seoMetaTags)
     },
     content: dato.hello.content
   });
