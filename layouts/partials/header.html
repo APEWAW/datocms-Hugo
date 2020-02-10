@@ -26,11 +26,7 @@
 
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 
-    {{ with .Param "seo" }}
-
-      {{ . | safeHTML }}
-
-    {{ end }}
+    {{ partial "opengraph.html" . }}
 
   </head>
 
