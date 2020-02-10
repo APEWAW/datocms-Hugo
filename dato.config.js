@@ -61,8 +61,7 @@ module.exports = (dato, root, i18n) => {
           display: chapter.display,
           release: chapter.release,
           cover: chapter.cover.toMap(),
-          modular: chapter.modular.toMap(),
-          seo: toHtml(dato.hello.seoMetaTags)
+          modular: chapter.modular.toMap()
         },
         content: chapter.content
       });
@@ -75,8 +74,7 @@ module.exports = (dato, root, i18n) => {
     frontmatter: {
       title: dato.hello.title,
       excerpt: dato.hello.excerpt,
-      cover: dato.hello.cover.toMap(),
-      seo: toHtml(dato.hello.seoMetaTags)
+      cover: dato.hello.cover.toMap()
     },
     content: dato.hello.content
   });
