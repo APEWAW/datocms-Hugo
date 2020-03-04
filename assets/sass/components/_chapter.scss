@@ -32,6 +32,10 @@
     }
   }
 
+  a:not(.u-bgcolor-blue) {
+    @extend .u-color-blue;
+  }
+
   figure {
     @extend .u-pb;
 
