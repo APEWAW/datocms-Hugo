@@ -112,23 +112,23 @@
 
           {{ else if eq .itemType "box" }}
 
-          <div class="u-border u-pl-x2 u-pr u-mv">
+            <div class="u-border u-pl-x2 u-pr u-mv">
 
-            {{ if in (string .box) "\n\n" }}
-
-              {{ .box | markdownify }}
-
-            {{ else }}
-
-              <p>
+              {{ if in (string .box) "\n\n" }}
 
                 {{ .box | markdownify }}
 
-              </p>
+              {{ else }}
 
-            {{ end }}
+                <p>
 
-          </div>
+                  {{ .box | markdownify }}
+
+                </p>
+
+              {{ end }}
+
+            </div>
 
           {{ else if eq .itemType "video" }}
 
@@ -155,6 +155,26 @@
                 <iframe src="http://www.facebook.com/video/embed?video_id={{ $video }}"  frameborder="0" allowFullScreen>
 
                 </iframe>
+
+              {{ end }}
+
+            </div>
+
+          {{ else if eq .itemType "footnote" }}
+
+            <div class="o-type-small u-mt-x3">
+
+              {{ if in (string .footnote) "\n\n" }}
+
+                {{ .footnote | markdownify }}
+
+              {{ else }}
+
+                <p>
+
+                  {{ .footnote | markdownify }}
+
+                </p>
 
               {{ end }}
 
