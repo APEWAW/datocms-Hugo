@@ -32,6 +32,21 @@
     }
   }
 
+  ol {
+    @extend .o-list;
+    @extend .o-list--block;
+    @extend .u-ph-x2;
+    @extend .u-pb;
+
+    li {
+      @extend .o-list__item;
+
+      &:not(:last-child) {
+        margin-bottom: $baseline / 1.45 !important;
+      }
+    }
+  }
+
   a:not(.u-bgcolor-blue) {
     @extend .u-color-blue;
   }
