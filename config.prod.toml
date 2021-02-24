@@ -1,4 +1,4 @@
-baseurl = "https://leguide-eap.netlify.app/"
+baseurl = "https://leguide.eap-wb.be/"
 title= "Le Guide de la formation présentielle, par l’EAP"
 Paginate = 5
 
