@@ -1,5 +1,5 @@
 baseurl = "https://leguide.eap-wb.be/"
-title= "Le Guide de la formation présentielle, par l’EAP"
+title= "Le Guide de la formation, par l’EAP"
 Paginate = 5
 
 [params]
@@ -11,6 +11,6 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
   chapters = "/:filename"
 
 # datocms:start
-title = "Le Guide de la formation présentielle, par l’EAP "
+title = "Le Guide de la formation, par l’EAP "
 languageCode = "en"
 # datocms:end
